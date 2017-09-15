@@ -13,25 +13,27 @@ public class CalculatorView {
 
     private static final String TITLE = "Calculator";
 
-    private final JButton clearButton = new JButton("C");
-    private final JButton equalsButton = new JButton("=");
-    private final JButton percentButton = new JButton("%");
-    private final JButton inverseButton = new JButton("+/-");
-    private final JButton decimalButton = new JButton(".");
-    private final JButton addButton = new JButton("+");
-    private final JButton subButton = new JButton("-");
-    private final JButton mulButton = new JButton("x");
-    private final JButton divButton = new JButton("/");
-    private final JButton numButton0 = new JButton("0");
-    private final JButton numButton1 = new JButton("1");
-    private final JButton numButton2 = new JButton("2");
-    private final JButton numButton3 = new JButton("3");
-    private final JButton numButton4 = new JButton("4");
-    private final JButton numButton5 = new JButton("5");
-    private final JButton numButton6 = new JButton("6");
-    private final JButton numButton7 = new JButton("7");
-    private final JButton numButton8 = new JButton("8");
-    private final JButton numButton9 = new JButton("9");
+    // private final JButton clearButton = new JButton("C");
+    // private final JButton equalsButton = new JButton("=");
+    // private final JButton percentButton = new JButton("%");
+    // private final JButton inverseButton = new JButton("+/-");
+    // private final JButton decimalButton = new JButton(".");
+    // private final JButton addButton = new JButton("+");
+    // private final JButton subButton = new JButton("-");
+    // private final JButton mulButton = new JButton("x");
+    // private final JButton divButton = new JButton("/");
+    // private final JButton numButton0 = new JButton("0");
+    // private final JButton numButton1 = new JButton("1");
+    // private final JButton numButton2 = new JButton("2");
+    // private final JButton numButton3 = new JButton("3");
+    // private final JButton numButton4 = new JButton("4");
+    // private final JButton numButton5 = new JButton("5");
+    // private final JButton numButton6 = new JButton("6");
+    // private final JButton numButton7 = new JButton("7");
+    // private final JButton numButton8 = new JButton("8");
+    // private final JButton numButton9 = new JButton("9");
+
+    private final ButtonSet button = new ButtonSet();
 
     private JFrame frame;
     private JPanel rootPanel;
@@ -89,11 +91,11 @@ public class CalculatorView {
         column1.setLayout(new BoxLayout(column1, BoxLayout.Y_AXIS));
         buttonPanel.add(column1);
 
-        column1.add(clearButton);
-        column1.add(numButton7);
-        column1.add(numButton4);
-        column1.add(numButton1);
-        column1.add(numButton0);
+        column1.add(button.clear());
+        column1.add(button.num7());
+        column1.add(button.num4());
+        column1.add(button.num1());
+        column1.add(button.num0());
     }
 
     private void addColumn2() {
@@ -101,11 +103,11 @@ public class CalculatorView {
         column2.setLayout(new BoxLayout(column2, BoxLayout.Y_AXIS));
         buttonPanel.add(column2);
 
-        column2.add(percentButton);
-        column2.add(numButton8);
-        column2.add(numButton5);
-        column2.add(numButton2);
-        column2.add(decimalButton);
+        column2.add(button.percent());
+        column2.add(button.num8());
+        column2.add(button.num5());
+        column2.add(button.num2());
+        column2.add(button.decimal());
     }
 
     private void addColumn3() {
@@ -113,11 +115,11 @@ public class CalculatorView {
         column3.setLayout(new BoxLayout(column3, BoxLayout.Y_AXIS));
         buttonPanel.add(column3);
 
-        column3.add(divButton);
-        column3.add(numButton9);
-        column3.add(numButton6);
-        column3.add(numButton3);
-        column3.add(inverseButton);
+        column3.add(button.div());
+        column3.add(button.num9());
+        column3.add(button.num6());
+        column3.add(button.num3());
+        column3.add(button.inverse());
     }
 
     private void addColumn4() {
@@ -125,14 +127,14 @@ public class CalculatorView {
         column4.setLayout(new BoxLayout(column4, BoxLayout.Y_AXIS));
         buttonPanel.add(column4);
 
-        column4.add(mulButton);
-        column4.add(subButton);
-        column4.add(addButton);
-        column4.add(equalsButton);
+        column4.add(button.mul());
+        column4.add(button.sub());
+        column4.add(button.add());
+        column4.add(button.equals());
     }
 
-    public JButton getClearButton() {
-        return clearButton;
+    public ButtonSet getButtons() {
+        return button;
     }
 
     public void visible() {
