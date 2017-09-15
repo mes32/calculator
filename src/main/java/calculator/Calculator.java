@@ -10,6 +10,7 @@ import java.io.*;
 
 public class Calculator {
     public static void main(String[] args) {
-        System.out.println("... In Calculator.java");
+        Gui gui = new Gui();
+        gui.visible();
     }
 }
