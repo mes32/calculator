@@ -11,7 +11,11 @@ import java.awt.event.*;
 
 public class CalculatorController {
 
+    CalculatorModel model;
+
     CalculatorController(CalculatorModel model, CalculatorView view) {
+        this.model = model;
+
         addListeners(view.getButtons());
     }
 
@@ -39,7 +43,7 @@ public class CalculatorController {
 
     private void pressClear() {
         System.out.println("pressClear()");
-        //view.update();
+        model.clear();
     }
 
     private void pressEquals() {
@@ -84,51 +88,51 @@ public class CalculatorController {
 
     private void pressNum0() {
         System.out.println("pressNum0()");
-        //view.update();
+        model.type(0);
     }
 
     private void pressNum1() {
         System.out.println("pressNum1()");
-        //view.update();
+        model.type(1);
     }
 
     private void pressNum2() {
         System.out.println("pressNum2()");
-        //view.update();
+        model.type(2);
     }
 
     private void pressNum3() {
         System.out.println("pressNum3()");
-        //view.update();
+        model.type(3);
     }
 
     private void pressNum4() {
         System.out.println("pressNum4()");
-        //view.update();
+        model.type(4);
     }
 
     private void pressNum5() {
         System.out.println("pressNum5()");
-        //view.update();
+        model.type(5);
     }
 
     private void pressNum6() {
         System.out.println("pressNum6()");
-        //view.update();
+        model.type(6);
     }
 
     private void pressNum7() {
         System.out.println("pressNum7()");
-        //view.update();
+        model.type(7);
     }
 
     private void pressNum8() {
         System.out.println("pressNum8()");
-        //view.update();
+        model.type(8);
     }
 
     private void pressNum9() {
         System.out.println("pressNum9()");
-        //view.update();
+        model.type(9);
     }
 }

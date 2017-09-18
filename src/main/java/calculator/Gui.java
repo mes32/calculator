@@ -15,8 +15,8 @@ public class Gui {
     private CalculatorController controller;
 
     Gui() {
-        model = new CalculatorModel();
         view = new CalculatorView();
+        model = new CalculatorModel(view);
         controller = new CalculatorController(model, view);
     }
 

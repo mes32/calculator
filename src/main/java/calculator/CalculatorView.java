@@ -13,27 +13,8 @@ public class CalculatorView {
 
     private static final String TITLE = "Calculator";
 
-    // private final JButton clearButton = new JButton("C");
-    // private final JButton equalsButton = new JButton("=");
-    // private final JButton percentButton = new JButton("%");
-    // private final JButton inverseButton = new JButton("+/-");
-    // private final JButton decimalButton = new JButton(".");
-    // private final JButton addButton = new JButton("+");
-    // private final JButton subButton = new JButton("-");
-    // private final JButton mulButton = new JButton("x");
-    // private final JButton divButton = new JButton("/");
-    // private final JButton numButton0 = new JButton("0");
-    // private final JButton numButton1 = new JButton("1");
-    // private final JButton numButton2 = new JButton("2");
-    // private final JButton numButton3 = new JButton("3");
-    // private final JButton numButton4 = new JButton("4");
-    // private final JButton numButton5 = new JButton("5");
-    // private final JButton numButton6 = new JButton("6");
-    // private final JButton numButton7 = new JButton("7");
-    // private final JButton numButton8 = new JButton("8");
-    // private final JButton numButton9 = new JButton("9");
-
     private final ButtonSet button = new ButtonSet();
+    private final JLabel display = new JLabel("0");
 
     private JFrame frame;
     private JPanel rootPanel;
@@ -56,10 +37,6 @@ public class CalculatorView {
     }
 
     private void addRootPanel() {
-        /*
-        See: https://itunes.apple.com/us/app/the-calculator/id398129933?mt=8    
-        */
-
         rootPanel = new JPanel();
         rootPanel.setLayout(new BoxLayout(rootPanel, BoxLayout.Y_AXIS));
         frame.getContentPane().add(rootPanel);
@@ -72,7 +49,7 @@ public class CalculatorView {
         displayPanel = new JPanel();
         rootPanel.add(displayPanel);
 
-        displayPanel.add(new JLabel("0"));
+        displayPanel.add(display);
     }
 
     private void addButtonPanel() {
@@ -135,6 +112,10 @@ public class CalculatorView {
 
     public ButtonSet getButtons() {
         return button;
+    }
+
+    public void setDisplay(String text) {
+        display.setText(text);
     }
 
     public void visible() {
