@@ -18,6 +18,11 @@ public class CalculatorModel {
     private boolean cleared;
     private boolean equaled;
 
+    private boolean add;
+    private boolean subtract;
+    private boolean multiply;
+    private boolean divide;
+
     CalculatorModel(CalculatorView view) {
         this.view = view;
         clear();
@@ -31,19 +36,39 @@ public class CalculatorModel {
         cleared = true;
         equaled = false;
 
+        add = false;
+        subtract = false;
+        multiply = false;
+        divide = false;
+
         update();
+    }
+
+    public void equals() {
+        if (add) {
+            value = previousValue + value;
+        } else if (subtract) {
+            value = previousValue - value;
+        } else if (multiply) {
+            value = previousValue * value;
+        } else if (divide) {
+            value = previousValue / value;
+        }
+        equaled = true;
+        update();
+    }
+
+    public void add() {
+        previousValue = value;
+        equaled = true;
+        add = true;
     }
 
     public void type(int input) {
         if (cleared || equaled) {
-
             value = (long) input;
-
-
         } else {
-
             value = Long.parseLong(display + input);
-
         }
 
         cleared = false;
@@ -54,5 +79,8 @@ public class CalculatorModel {
     private void update() {
         display = "" + value;
         view.setDisplay(display);
+
+        System.out.println(" - prev = " + previousValue);
+        System.out.println(" - valu = " + value);
     }
 }
