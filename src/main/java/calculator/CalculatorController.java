@@ -70,11 +70,11 @@ public class CalculatorController {
     }
 
     private void pressMul() {
-        System.out.println("pressMul()");
+        model.multiply();
     }
 
     private void pressDiv() {
-        System.out.println("pressDiv()");
+        model.divide();
     }
 
     private void pressNum0() {

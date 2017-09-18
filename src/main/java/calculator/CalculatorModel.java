@@ -10,10 +10,12 @@ public class CalculatorModel {
 
     private CalculatorView view;
 
-    private long value;
-    private long previousValue;
     private String display;
     private boolean overwrite;
+    private long typed;
+
+    private long value;
+    private long previousValue;
 
     private boolean add;
     private boolean subtract;
@@ -26,11 +28,12 @@ public class CalculatorModel {
     }
 
     public void clear() {
+        display = "0";
+        overwrite = true;
+        typed = 0L;
+
         value = 0L;
         previousValue = 0L;
-        display = "0";
-
-        overwrite = true;
 
         add = false;
         subtract = false;
@@ -41,15 +44,17 @@ public class CalculatorModel {
     }
 
     public void equals() {
+        long hold = value;
         if (add) {
-            value = previousValue + value;
+            value = previousValue + typed;
         } else if (subtract) {
-            value = previousValue - value;
+            value = previousValue - typed;
         } else if (multiply) {
-            value = previousValue * value;
+            value = previousValue * typed;
         } else if (divide) {
-            value = previousValue / value;
+            value = previousValue / typed;
         }
+        previousValue = hold;
         overwrite = true;
         update();
     }
@@ -64,6 +69,16 @@ public class CalculatorModel {
         subtract = true;
     }
 
+    public void multiply() {
+        operator();
+        multiply = true;
+    }
+
+    public void divide() {
+        operator();
+        divide = true;
+    }
+    
     private void operator() {
         previousValue = value;
         overwrite = true;
@@ -79,17 +94,23 @@ public class CalculatorModel {
             value = (long) input;
             overwrite = false;
         } else {
-            value = Long.parseLong(display + input);
+            value = 10L*value + input;
         }
+
+        typed = value;
 
         update();
     }
 
     private void update() {
         display = "" + value;
-        view.setDisplay(display);
+        view.setDisplay("" + value);
 
-        System.out.println(" - prev = " + previousValue);
-        System.out.println(" - valu = " + value);
+        System.err.println("+++++++++++++++++++++++++++++++++++");
+        System.err.println(" - previousValue = " + previousValue);
+        System.err.println(" -         value = " + value);
+        System.err.println(" -         typed = " + typed);
+        System.err.println(" -       display = " + display);
+        System.err.println("+++++++++++++++++++++++++++++++++++");
     }
 }
