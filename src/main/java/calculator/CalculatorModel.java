@@ -13,10 +13,7 @@ public class CalculatorModel {
     private long value;
     private long previousValue;
     private String display;
-    //private boolean overwrite;
-
-    private boolean cleared;
-    private boolean equaled;
+    private boolean overwrite;
 
     private boolean add;
     private boolean subtract;
@@ -33,8 +30,7 @@ public class CalculatorModel {
         previousValue = 0L;
         display = "0";
 
-        cleared = true;
-        equaled = false;
+        overwrite = true;
 
         add = false;
         subtract = false;
@@ -54,25 +50,38 @@ public class CalculatorModel {
         } else if (divide) {
             value = previousValue / value;
         }
-        equaled = true;
+        overwrite = true;
         update();
     }
 
     public void add() {
-        previousValue = value;
-        equaled = true;
+        operator();
         add = true;
     }
 
+    public void subtract() {
+        operator();
+        subtract = true;
+    }
+
+    private void operator() {
+        previousValue = value;
+        overwrite = true;
+
+        add = false;
+        subtract = false;
+        multiply = false;
+        divide = false;
+    }
+
     public void type(int input) {
-        if (cleared || equaled) {
+        if (overwrite) {
             value = (long) input;
+            overwrite = false;
         } else {
             value = Long.parseLong(display + input);
         }
 
-        cleared = false;
-        equaled = false;
         update();
     }
 

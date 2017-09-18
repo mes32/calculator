@@ -66,7 +66,7 @@ public class CalculatorController {
     }
 
     private void pressSub() {
-        System.out.println("pressSub()");
+        model.subtract();
     }
 
     private void pressMul() {
