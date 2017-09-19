@@ -10,12 +10,10 @@ public class CalculatorModel {
 
     private CalculatorView view;
 
+    private long value;
+    private long typed;
     private String display;
     private boolean overwrite;
-    private long typed;
-
-    private long value;
-    private long previousValue;
 
     private boolean add;
     private boolean subtract;
@@ -28,35 +26,31 @@ public class CalculatorModel {
     }
 
     public void clear() {
+        value = 0L;
+        typed = 0L;
         display = "0";
         overwrite = true;
-        typed = 0L;
-
-        value = 0L;
-        previousValue = 0L;
 
         add = false;
         subtract = false;
         multiply = false;
         divide = false;
 
-        update();
+        update(value);
     }
 
     public void equals() {
-        long hold = value;
         if (add) {
-            value = previousValue + typed;
+            value += typed;
         } else if (subtract) {
-            value = previousValue - typed;
+            value -= typed;
         } else if (multiply) {
-            value = previousValue * typed;
+            value *= typed;
         } else if (divide) {
-            value = previousValue / typed;
+            value /= typed;
         }
-        previousValue = hold;
         overwrite = true;
-        update();
+        update(value);
     }
 
     public void add() {
@@ -80,7 +74,7 @@ public class CalculatorModel {
     }
     
     private void operator() {
-        previousValue = value;
+        value = typed;
         overwrite = true;
 
         add = false;
@@ -91,26 +85,16 @@ public class CalculatorModel {
 
     public void type(int input) {
         if (overwrite) {
-            value = (long) input;
+            typed = (long) input;
             overwrite = false;
         } else {
-            value = 10L*value + input;
+            typed = 10L*typed + input;
         }
 
-        typed = value;
-
-        update();
+        update(typed);
     }
 
-    private void update() {
-        display = "" + value;
+    private void update(long value) {
         view.setDisplay("" + value);
-
-        System.err.println("+++++++++++++++++++++++++++++++++++");
-        System.err.println(" - previousValue = " + previousValue);
-        System.err.println(" -         value = " + value);
-        System.err.println(" -         typed = " + typed);
-        System.err.println(" -       display = " + display);
-        System.err.println("+++++++++++++++++++++++++++++++++++");
     }
 }
