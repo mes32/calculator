@@ -26,7 +26,16 @@ public class CalculatorView {
     private JPanel column4;
 
     CalculatorView() {
+        initLookAndFeel();
         initFrame();
+    }
+
+    private void initLookAndFeel() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (ClassNotFoundException|InstantiationException|IllegalAccessException|UnsupportedLookAndFeelException e) {
+
+        }
     }
 
     private void initFrame() {
