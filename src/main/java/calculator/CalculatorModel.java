@@ -14,6 +14,7 @@ public class CalculatorModel {
     private long typed;
     private String display;
     private boolean overwrite;
+    private boolean fresh;
 
     private boolean add;
     private boolean subtract;
@@ -30,6 +31,7 @@ public class CalculatorModel {
         typed = 0L;
         display = "0";
         overwrite = true;
+        fresh = true;
 
         add = false;
         subtract = false;
@@ -40,6 +42,12 @@ public class CalculatorModel {
     }
 
     public void equals() {
+        evaluate();
+        overwrite = true;
+        update(value);
+    }
+
+    private void evaluate() {
         if (add) {
             value += typed;
         } else if (subtract) {
@@ -49,8 +57,6 @@ public class CalculatorModel {
         } else if (divide) {
             value /= typed;
         }
-        overwrite = true;
-        update(value);
     }
 
     public void add() {
@@ -74,7 +80,12 @@ public class CalculatorModel {
     }
     
     private void operator() {
-        value = typed;
+        if (fresh) { 
+            value = typed;
+            fresh = false;
+        } else {
+            evaluate();
+        }
         overwrite = true;
 
         add = false;
@@ -90,7 +101,6 @@ public class CalculatorModel {
         } else {
             typed = 10L*typed + input;
         }
-
         update(typed);
     }
 
