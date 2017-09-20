@@ -74,26 +74,57 @@ public class CalculatorView {
 
     private void addColumn1() {
         column1 = new JPanel();
-        column1.setLayout(new BoxLayout(column1, BoxLayout.Y_AXIS));
+        // column1.setLayout(new BoxLayout(column1, BoxLayout.Y_AXIS));
         buttonPanel.add(column1);
 
-        column1.add(button.clear());
-        column1.add(button.num7());
-        column1.add(button.num4());
-        column1.add(button.num1());
-        column1.add(button.num0());
+        // column1.add(button.clear());
+        // column1.add(button.num7());
+        // column1.add(button.num4());
+        // column1.add(button.num1());
+        // column1.add(button.num0());
+        column1.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weighty = 1;
+        c.gridx = 0;
+        c.gridy = 0;
+        column1.add(button.clear(), c);
+        c.gridy = 1;
+        column1.add(button.num7(), c);
+        c.gridy = 2;
+        column1.add(button.num4(), c);
+        c.gridy = 3;
+        column1.add(button.num1(), c);
+        c.gridy = 4;
+        column1.add(button.num0(), c);
     }
 
     private void addColumn2() {
         column2 = new JPanel();
-        column2.setLayout(new BoxLayout(column2, BoxLayout.Y_AXIS));
+        // column2.setLayout(new BoxLayout(column2, BoxLayout.Y_AXIS));
         buttonPanel.add(column2);
 
-        column2.add(button.percent());
-        column2.add(button.num8());
-        column2.add(button.num5());
-        column2.add(button.num2());
-        column2.add(button.decimal());
+        // column2.add(button.percent());
+        // column2.add(button.num8());
+        // column2.add(button.num5());
+        // column2.add(button.num2());
+        // column2.add(button.decimal());
+
+        column2.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.VERTICAL;
+        c.weighty = 1;
+        c.gridx = 0;
+        c.gridy = 0;
+        column2.add(button.percent(), c);
+        c.gridy = 1;
+        column2.add(button.num8(), c);
+        c.gridy = 2;
+        column2.add(button.num5(), c);
+        c.gridy = 3;
+        column2.add(button.num2(), c);
+        c.gridy = 4;
+        column2.add(button.decimal(), c);
     }
 
     private void addColumn3() {
