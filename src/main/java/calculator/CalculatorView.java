@@ -14,7 +14,7 @@ public class CalculatorView {
     private static final String TITLE = "Calculator";
 
     private final ButtonSet button = new ButtonSet();
-    private final JLabel display = new JLabel("0");
+    private final JLabel display = new CalcDisplay();
 
     private JFrame frame;
     private JPanel rootPanel;
@@ -56,9 +56,16 @@ public class CalculatorView {
 
     private void addDisplayPanel() {
         displayPanel = new JPanel();
+        displayPanel.setLayout(new GridBagLayout());
         rootPanel.add(displayPanel);
 
-        displayPanel.add(display);
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.BOTH;
+        c.weighty = 1;
+        c.weightx = 1;
+        c.gridy = 0;
+        c.gridx = 0;
+        displayPanel.add(display, c);
     }
 
     private void addButtonPanel() {
