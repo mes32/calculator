@@ -63,7 +63,7 @@ public class CalculatorView {
 
     private void addButtonPanel() {
         buttonPanel = new JPanel();
-        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+        buttonPanel.setLayout(new GridBagLayout());
         rootPanel.add(buttonPanel);
 
         addColumn1();
@@ -73,81 +73,96 @@ public class CalculatorView {
     }
 
     private void addColumn1() {
-        column1 = new JPanel();
-        // column1.setLayout(new BoxLayout(column1, BoxLayout.Y_AXIS));
-        buttonPanel.add(column1);
-
-        // column1.add(button.clear());
-        // column1.add(button.num7());
-        // column1.add(button.num4());
-        // column1.add(button.num1());
-        // column1.add(button.num0());
-        column1.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
         c.weighty = 1;
+        c.weightx = 1;
         c.gridx = 0;
+
         c.gridy = 0;
-        column1.add(button.clear(), c);
+        buttonPanel.add(button.clear(), c);
         c.gridy = 1;
-        column1.add(button.num7(), c);
+        buttonPanel.add(button.num7(), c);
         c.gridy = 2;
-        column1.add(button.num4(), c);
+        buttonPanel.add(button.num4(), c);
         c.gridy = 3;
-        column1.add(button.num1(), c);
+        buttonPanel.add(button.num1(), c);
         c.gridy = 4;
-        column1.add(button.num0(), c);
+        buttonPanel.add(button.num0(), c);
     }
 
     private void addColumn2() {
-        column2 = new JPanel();
-        // column2.setLayout(new BoxLayout(column2, BoxLayout.Y_AXIS));
-        buttonPanel.add(column2);
-
-        // column2.add(button.percent());
-        // column2.add(button.num8());
-        // column2.add(button.num5());
-        // column2.add(button.num2());
-        // column2.add(button.decimal());
-
-        column2.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.VERTICAL;
+        c.fill = GridBagConstraints.BOTH;
         c.weighty = 1;
-        c.gridx = 0;
+        c.weightx = 1;
+        c.gridx = 1;
+        
         c.gridy = 0;
-        column2.add(button.percent(), c);
+        buttonPanel.add(button.percent(), c);
         c.gridy = 1;
-        column2.add(button.num8(), c);
+        buttonPanel.add(button.num8(), c);
         c.gridy = 2;
-        column2.add(button.num5(), c);
+        buttonPanel.add(button.num5(), c);
         c.gridy = 3;
-        column2.add(button.num2(), c);
+        buttonPanel.add(button.num2(), c);
         c.gridy = 4;
-        column2.add(button.decimal(), c);
+        buttonPanel.add(button.decimal(), c);
     }
 
     private void addColumn3() {
-        column3 = new JPanel();
-        column3.setLayout(new BoxLayout(column3, BoxLayout.Y_AXIS));
-        buttonPanel.add(column3);
-
-        column3.add(button.div());
-        column3.add(button.num9());
-        column3.add(button.num6());
-        column3.add(button.num3());
-        column3.add(button.inverse());
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.BOTH;
+        c.weighty = 1;
+        c.weightx = 1;
+        c.gridx = 2;
+        
+        c.gridy = 0;
+        buttonPanel.add(button.div(), c);
+        c.gridy = 1;
+        buttonPanel.add(button.num9(), c);
+        c.gridy = 2;
+        buttonPanel.add(button.num6(), c);
+        c.gridy = 3;
+        buttonPanel.add(button.num3(), c);
+        c.gridy = 4;
+        buttonPanel.add(button.inverse(), c);
     }
 
     private void addColumn4() {
-        column4 = new JPanel();
-        column4.setLayout(new BoxLayout(column4, BoxLayout.Y_AXIS));
-        buttonPanel.add(column4);
 
-        column4.add(button.mul());
-        column4.add(button.sub());
-        column4.add(button.add());
-        column4.add(button.equals());
+        /*
+        GridBagConstraints c = new GridBagConstraints();
+        c.anchor = GridBagConstraints.FIRST_LINE_START;
+        c.insets = new Insets(topGap, leftGap, bottomGap, rightGap);
+
+        c.gridx = 
+        c.gridy =
+        c.gridwidth =
+        c.gridheight = 
+        c.fill =
+        c.weightx =
+        c.weighty = 
+        */
+
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.BOTH;
+        c.weighty = 1;
+        c.weightx = 1;
+        c.gridwidth = 1;
+        c.gridheight = 1;
+        c.gridx = 3;
+        
+        c.gridy = 0;
+        buttonPanel.add(button.mul(), c);
+        c.gridy = 1;
+        buttonPanel.add(button.sub(), c);
+        c.gridy = 2;
+        buttonPanel.add(button.add(), c);
+        c.gridy = 3;
+        c.weighty = 2;
+        c.gridheight = 2;
+        buttonPanel.add(button.equals(), c);
     }
 
     public ButtonSet getButtons() {
