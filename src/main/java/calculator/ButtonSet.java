@@ -14,7 +14,7 @@ public class ButtonSet {
     private final JButton clear = new CalcButton("C");
     private final JButton equals = new CalcButton("=");
     private final JButton percent = new CalcButton("%");
-    private final JButton inverse = new CalcButton("+/\u2212");
+    private final JButton inverse = new CalcButton("\u00b1");
     private final JButton decimal = new CalcButton(".");
     private final JButton add = new CalcButton("+");
     private final JButton sub = new CalcButton("\u2212");
