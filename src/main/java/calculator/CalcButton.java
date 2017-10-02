@@ -18,11 +18,11 @@ public class CalcButton extends JButton {
         //this.setFocusPainted(false);
         //this.setContentAreaFilled(false);
 
-        this.setBackground(new Color(100, 100, 100));
+        this.setBackground(ConfigureView.BUTTON_BACKGROUND);
         this.setOpaque(true);
         this.setForeground(Color.WHITE);
         this.setFocusPainted(false);
-        this.setFont(new Font("Verdana", Font.PLAIN, 32));
+        this.setFont(ConfigureView.BUTTON_FONT);
 
         this.setBorder(new RoundBorder(20));
 

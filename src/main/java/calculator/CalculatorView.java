@@ -89,12 +89,14 @@ public class CalculatorView {
         c.gridy = 0;
         buttonPanel.add(button.clear(), c);
         c.gridy = 1;
-        buttonPanel.add(button.num7(), c);
+        buttonPanel.add(Box.createVerticalStrut(10), c);
         c.gridy = 2;
-        buttonPanel.add(button.num4(), c);
+        buttonPanel.add(button.num7(), c);
         c.gridy = 3;
-        buttonPanel.add(button.num1(), c);
+        buttonPanel.add(button.num4(), c);
         c.gridy = 4;
+        buttonPanel.add(button.num1(), c);
+        c.gridy = 5;
         buttonPanel.add(button.num0(), c);
     }
 
@@ -108,12 +110,14 @@ public class CalculatorView {
         c.gridy = 0;
         buttonPanel.add(button.percent(), c);
         c.gridy = 1;
-        buttonPanel.add(button.num8(), c);
+        buttonPanel.add(Box.createVerticalStrut(5), c);
         c.gridy = 2;
-        buttonPanel.add(button.num5(), c);
+        buttonPanel.add(button.num8(), c);
         c.gridy = 3;
-        buttonPanel.add(button.num2(), c);
+        buttonPanel.add(button.num5(), c);
         c.gridy = 4;
+        buttonPanel.add(button.num2(), c);
+        c.gridy = 5;
         buttonPanel.add(button.decimal(), c);
     }
 
@@ -127,31 +131,18 @@ public class CalculatorView {
         c.gridy = 0;
         buttonPanel.add(button.div(), c);
         c.gridy = 1;
-        buttonPanel.add(button.num9(), c);
+        buttonPanel.add(Box.createVerticalStrut(5), c);
         c.gridy = 2;
-        buttonPanel.add(button.num6(), c);
+        buttonPanel.add(button.num9(), c);
         c.gridy = 3;
-        buttonPanel.add(button.num3(), c);
+        buttonPanel.add(button.num6(), c);
         c.gridy = 4;
+        buttonPanel.add(button.num3(), c);
+        c.gridy = 5;
         buttonPanel.add(button.inverse(), c);
     }
 
     private void addColumn4() {
-
-        /*
-        GridBagConstraints c = new GridBagConstraints();
-        c.anchor = GridBagConstraints.FIRST_LINE_START;
-        c.insets = new Insets(topGap, leftGap, bottomGap, rightGap);
-
-        c.gridx = 
-        c.gridy =
-        c.gridwidth =
-        c.gridheight = 
-        c.fill =
-        c.weightx =
-        c.weighty = 
-        */
-
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.BOTH;
         c.weighty = 1;
@@ -163,10 +154,12 @@ public class CalculatorView {
         c.gridy = 0;
         buttonPanel.add(button.mul(), c);
         c.gridy = 1;
-        buttonPanel.add(button.sub(), c);
+        buttonPanel.add(Box.createVerticalStrut(5), c);
         c.gridy = 2;
-        buttonPanel.add(button.add(), c);
+        buttonPanel.add(button.sub(), c);
         c.gridy = 3;
+        buttonPanel.add(button.add(), c);
+        c.gridy = 4;
         c.weighty = 2;
         c.gridheight = 2;
         buttonPanel.add(button.equals(), c);
