@@ -12,11 +12,17 @@ import javax.swing.border.*;
 
 public class CalcButton extends JButton {
 
+    private static final int DEFAULT_GRIDHEIGHT = 1;
+
+    private int gridheight;
+
     CalcButton(String label) {
+        this(label, DEFAULT_GRIDHEIGHT);
+    }
+
+    CalcButton(String label, int gridheight) {
         super(label);
-        //this.setBorderPainted(false);
-        //this.setFocusPainted(false);
-        //this.setContentAreaFilled(false);
+        this.gridheight = gridheight;
 
         this.setBackground(ConfigureView.BUTTON_BACKGROUND);
         this.setOpaque(true);
@@ -28,6 +34,10 @@ public class CalcButton extends JButton {
 
         this.setMargin(new Insets(10, 10, 10, 10));
         this.setPreferredSize(new Dimension(80, 80));
+    }
+
+    public int getGridheight() {
+        return gridheight;
     }
 
     private class RoundBorder implements Border {
@@ -50,5 +60,4 @@ public class CalcButton extends JButton {
             g.drawRoundRect(x, y, width-1, height-1, radius, radius);
         }
     }
-
 }
