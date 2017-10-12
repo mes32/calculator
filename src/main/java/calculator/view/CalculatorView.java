@@ -4,7 +4,7 @@
     Calculator application View portion of MVC pattern. Manages displayed application window.
  */
 
-package calculator;
+package calculator.view;
 
 import java.awt.*;
 import javax.swing.*;
@@ -28,7 +28,7 @@ public class CalculatorView {
     private JPanel column3;
     private JPanel column4;
 
-    CalculatorView() {
+    public CalculatorView() {
         initLookAndFeel();
         initFrame();
     }

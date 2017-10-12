@@ -4,7 +4,7 @@
     Manages state of the calculator.
  */
 
-package calculator;
+package calculator.view;
 
 import java.awt.*;
 import javax.swing.*;

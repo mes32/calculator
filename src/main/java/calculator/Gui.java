@@ -7,6 +7,7 @@
 package calculator;
 
 import java.io.*;
+import calculator.view.*;
 
 public class Gui {
 

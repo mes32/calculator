@@ -6,6 +6,8 @@
 
 package calculator;
 
+import calculator.view.*;
+
 public class CalculatorModel {
 
     private CalculatorView view;

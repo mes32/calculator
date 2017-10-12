@@ -4,7 +4,7 @@
     Configures the options colors and fonts for the displayed GUI.
  */
 
-package calculator;
+package calculator.view;
 
 import java.awt.*;
 import javax.swing.*;

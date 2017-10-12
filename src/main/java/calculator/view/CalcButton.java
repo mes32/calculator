@@ -4,7 +4,7 @@
     Creates custom calculator buttons.
  */
 
-package calculator;
+package calculator.view;
 
 import java.awt.*;
 import javax.swing.*;

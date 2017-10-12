@@ -8,6 +8,7 @@ package calculator;
 
 import java.awt.*;
 import java.awt.event.*;
+import calculator.view.*;
 
 public class CalculatorController {
 
@@ -50,14 +51,17 @@ public class CalculatorController {
     }
 
     private void pressPercent() {
+        // TODO: implement pressPercent()
         System.out.println("pressPercent()");
     }
 
     private void pressInverse() {
+        // TODO: implement pressInverse()
         System.out.println("pressInverse()");
     }
 
     private void pressDecimal() {
+        // TODO: implement pressDecimal()
         System.out.println("pressDecimal()");
     }
 
