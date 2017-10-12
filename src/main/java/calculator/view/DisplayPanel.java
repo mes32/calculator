@@ -1,5 +1,5 @@
 /*
-    CalcDisplay.java
+    DisplayPanel.java
 
     Creates custom calculator display.
  */
@@ -10,15 +10,17 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
-public class CalcDisplay extends JLabel {
+public class DisplayPanel extends JLabel {
 
     private static final String DEFAULT_DISPLAY = "0";
+    //private final JLabel display = new DisplayPanel();
 
-    CalcDisplay() {
+
+    DisplayPanel() {
         this(DEFAULT_DISPLAY);
     }
 
-    CalcDisplay(String text) {
+    DisplayPanel(String text) {
         super(text);
 
         this.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -35,4 +37,8 @@ public class CalcDisplay extends JLabel {
         //this.setMargin(new Insets(10, 10, 10, 10));
         this.setMinimumSize(new Dimension(80, 80));
     }
+
+    // public void setText(String text) {
+    //     display.setText(text);
+    // }
 }

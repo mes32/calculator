@@ -1,5 +1,5 @@
 /*
-    Gui.java
+    CalculatorGui.java
 
     Calculator application GUI.
  */
@@ -9,13 +9,13 @@ package calculator;
 import java.io.*;
 import calculator.view.*;
 
-public class Gui {
+public class CalculatorGui {
 
     private CalculatorModel model;
     private CalculatorView view;
     private CalculatorController controller;
 
-    Gui() {
+    CalculatorGui() {
         view = new CalculatorView();
         model = new CalculatorModel(view);
         controller = new CalculatorController(model, view);

@@ -11,103 +11,103 @@ import javax.swing.*;
 
 public class ButtonSet {
 
-    private final CalcButton clear = new CalcButton("C");
-    private final CalcButton equals = new CalcButton("=", 2);
-    private final CalcButton percent = new CalcButton("%");
-    private final CalcButton inverse = new CalcButton("\u00b1");
-    private final CalcButton decimal = new CalcButton(".");
-    private final CalcButton add = new CalcButton("+");
-    private final CalcButton sub = new CalcButton("\u2212");
-    private final CalcButton mul = new CalcButton("\u2715");
-    private final CalcButton div = new CalcButton("\u00F7");
-    private final CalcButton num0 = new CalcButton("0");
-    private final CalcButton num1 = new CalcButton("1");
-    private final CalcButton num2 = new CalcButton("2");
-    private final CalcButton num3 = new CalcButton("3");
-    private final CalcButton num4 = new CalcButton("4");
-    private final CalcButton num5 = new CalcButton("5");
-    private final CalcButton num6 = new CalcButton("6");
-    private final CalcButton num7 = new CalcButton("7");
-    private final CalcButton num8 = new CalcButton("8");
-    private final CalcButton num9 = new CalcButton("9");
+    private final Button clear = new Button("C");
+    private final Button equals = new Button("=", 2);
+    private final Button percent = new Button("%");
+    private final Button inverse = new Button("\u00b1");
+    private final Button decimal = new Button(".");
+    private final Button add = new Button("+");
+    private final Button sub = new Button("\u2212");
+    private final Button mul = new Button("\u2715");
+    private final Button div = new Button("\u00F7");
+    private final Button num0 = new Button("0");
+    private final Button num1 = new Button("1");
+    private final Button num2 = new Button("2");
+    private final Button num3 = new Button("3");
+    private final Button num4 = new Button("4");
+    private final Button num5 = new Button("5");
+    private final Button num6 = new Button("6");
+    private final Button num7 = new Button("7");
+    private final Button num8 = new Button("8");
+    private final Button num9 = new Button("9");
 
     ButtonSet() {
         
     }
 
-    public CalcButton clear() {
+    public Button clear() {
         return clear;
     }
 
-    public CalcButton equals() {
+    public Button equals() {
         return equals;
     }
 
-    public CalcButton percent() {
+    public Button percent() {
         return percent;
     }
 
-    public CalcButton inverse() {
+    public Button inverse() {
         return inverse;
     }
 
-    public CalcButton decimal() {
+    public Button decimal() {
         return decimal;
     }
 
-    public CalcButton add() {
+    public Button add() {
         return add;
     }
 
-    public CalcButton sub() {
+    public Button sub() {
         return sub;
     }
 
-    public CalcButton mul() {
+    public Button mul() {
         return mul;
     }
 
-    public CalcButton div() {
+    public Button div() {
         return div;
     }
 
-    public CalcButton num0() {
+    public Button num0() {
         return num0;
     }
 
-    public CalcButton num1() {
+    public Button num1() {
         return num1;
     }
 
-    public CalcButton num2() {
+    public Button num2() {
         return num2;
     }
 
-    public CalcButton num3() {
+    public Button num3() {
         return num3;
     }
 
-    public CalcButton num4() {
+    public Button num4() {
         return num4;
     }
 
-    public CalcButton num5() {
+    public Button num5() {
         return num5;
     }
 
-    public CalcButton num6() {
+    public Button num6() {
         return num6;
     }
 
-    public CalcButton num7() {
+    public Button num7() {
         return num7;
     }
 
-    public CalcButton num8() {
+    public Button num8() {
         return num8;
     }
 
-    public CalcButton num9() {
+    public Button num9() {
         return num9;
     }
 

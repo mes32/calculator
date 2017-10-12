@@ -1,5 +1,5 @@
 /*
-    ConfigureView.java
+    ConfigureStyle.java
 
     Configures the options colors and fonts for the displayed GUI.
  */
@@ -10,7 +10,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
-public abstract class ConfigureView {
+public abstract class ConfigureStyle {
 
     public static final Color DISPLAY_BACKGROUND = new Color(0, 0, 0);
     public static final Color DISPLAY_FOREGROUND = new Color(255, 255, 255);

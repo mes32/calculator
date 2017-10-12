@@ -13,7 +13,7 @@ public class CalculatorView {
 
     private static final String TITLE = "Calculator";
 
-    private final JLabel display = new CalcDisplay();
+    private final JLabel display = new DisplayPanel();
     private final ButtonSet button = new ButtonSet();
 
     private final DisplayConstraints displayConstraints = new DisplayConstraints();
@@ -77,7 +77,7 @@ public class CalculatorView {
         addColumn4();
     }
 
-    private void addButton(CalcButton button, int x, int y) {
+    private void addButton(Button button, int x, int y) {
         Component verticalStrut = Box.createVerticalStrut(5);
         Component horizontalStrut = Box.createHorizontalStrut(5);
 
