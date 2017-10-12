@@ -10,25 +10,29 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
-public class DisplayPanel extends JLabel {
+public class DisplayPanel extends JPanel {
 
     private static final String DEFAULT_DISPLAY = "0";
-    //private final JLabel display = new DisplayPanel();
+    private final JLabel display;
 
+    private final DisplayConstraints displayConstraints = new DisplayConstraints();
 
     DisplayPanel() {
         this(DEFAULT_DISPLAY);
     }
 
     DisplayPanel(String text) {
-        super(text);
-
-        this.setHorizontalAlignment(SwingConstants.RIGHT);
+        super();
+        this.setLayout(new GridBagLayout());
         this.setBackground(new Color(200, 200, 255));
-        this.setOpaque(true);
-        this.setForeground(Color.WHITE);
-        //this.setFocusPainted(false);
-        this.setFont(new Font("Verdana", Font.PLAIN, 32));
+
+        display = new JLabel(text);
+        display.setHorizontalAlignment(SwingConstants.RIGHT);
+        display.setBackground(new Color(200, 200, 255));
+        display.setOpaque(true);
+        display.setForeground(Color.WHITE);
+        //display.setFocusPainted(false);
+        display.setFont(new Font("Verdana", Font.PLAIN, 32));
 
         Border border = this.getBorder();
         Border margin = new EmptyBorder(10,10,10,10);
@@ -36,9 +40,24 @@ public class DisplayPanel extends JLabel {
 
         //this.setMargin(new Insets(10, 10, 10, 10));
         this.setMinimumSize(new Dimension(80, 80));
+
+        this.add(display, displayConstraints);
     }
 
-    // public void setText(String text) {
-    //     display.setText(text);
-    // }
+    public void setText(String text) {
+        display.setText(text);
+    }
+
+    private class DisplayConstraints extends GridBagConstraints {
+        DisplayConstraints() {
+            super();
+            fill = GridBagConstraints.BOTH;
+            weighty = 1;
+            weightx = 1;
+            gridwidth = 1;
+            gridheight = 1;
+            gridx = 0;
+            gridy = 0;
+        }
+    }
 }

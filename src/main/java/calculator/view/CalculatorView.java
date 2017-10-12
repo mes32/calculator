@@ -12,16 +12,14 @@ import javax.swing.*;
 public class CalculatorView {
 
     private static final String TITLE = "Calculator";
-
-    private final JLabel display = new DisplayPanel();
     private final ButtonSet button = new ButtonSet();
-
-    private final DisplayConstraints displayConstraints = new DisplayConstraints();
+    
     private final ButtonConstraints buttonConstraints = new ButtonConstraints();
 
     private JFrame frame;
     private JPanel rootPanel;
-    private JPanel displayPanel;
+
+    private DisplayPanel displayPanel = new DisplayPanel();
     private JPanel buttonPanel;
     private JPanel column1;
     private JPanel column2;
@@ -58,11 +56,7 @@ public class CalculatorView {
     }
 
     private void addDisplayPanel() {
-        displayPanel = new JPanel();
-        displayPanel.setLayout(new GridBagLayout());
         rootPanel.add(displayPanel);
-
-        displayPanel.add(display, displayConstraints);
     }
 
     private void addButtonPanel() {
@@ -137,24 +131,11 @@ public class CalculatorView {
     }
 
     public void setDisplay(String text) {
-        display.setText(text);
+        displayPanel.setText(text);
     }
 
     public void visible() {
         frame.setVisible(true);
-    }
-
-    private class DisplayConstraints extends GridBagConstraints {
-        DisplayConstraints() {
-            super();
-            fill = GridBagConstraints.BOTH;
-            weighty = 1;
-            weightx = 1;
-            gridwidth = 1;
-            gridheight = 1;
-            gridx = 0;
-            gridy = 0;
-        }
     }
 
     private class ButtonConstraints extends GridBagConstraints {
