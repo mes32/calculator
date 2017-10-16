@@ -32,7 +32,7 @@ public class Button extends JButton {
         this.setBorder(new RoundedBorder(20));
 
         this.setMargin(new Insets(10, 10, 10, 10));
-        this.setPreferredSize(new Dimension(80, 80));
+        this.setPreferredSize(new Dimension(80, 80 * gridheight));
     }
 
     public int getGridheight() {
