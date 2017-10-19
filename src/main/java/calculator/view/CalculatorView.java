@@ -37,6 +37,7 @@ public class CalculatorView {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         addRootPanel();
         frame.pack();
+        frame.setMinimumSize(frame.getSize());
     }
 
     private void addRootPanel() {

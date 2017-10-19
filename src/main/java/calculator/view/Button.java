@@ -29,11 +29,33 @@ public class Button extends JButton {
         this.setFocusPainted(false);
         this.setFont(ConfigureStyle.BUTTON_FONT);
 
+        this.setFocusPainted(false);
+
         this.setBorder(new RoundedBorder(20));
 
         this.setMargin(new Insets(10, 10, 10, 10));
         this.setPreferredSize(new Dimension(80, 80 * gridheight));
     }
+
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(80, 80 * gridheight);
+    }
+
+    @Override
+    public Dimension getMinimumSize() {
+        return new Dimension(80, 80 * gridheight);
+    }
+
+    // @Override
+    // public void paintComponent(Graphics g) {
+    //     super.paintComponent(g);
+    //     if (isSelected()) {
+    //         setBorder(BorderFactory.createEmptyBorder());
+    //     } else {
+    //         setBorder(BorderFactory.createLoweredBevelBorder());
+    //     }
+    // }
 
     public int getGridheight() {
         return gridheight;
